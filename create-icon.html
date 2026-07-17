@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buat Icon Kagami</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            gap: 30px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .icon-box {
+            text-align: center;
+            color: #aaa;
+        }
+        .icon-box .label {
+            margin-top: 10px;
+            font-size: 14px;
+            background: #0e0e12;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        .icon-192 {
+            width: 192px;
+            height: 192px;
+            background: linear-gradient(145deg, #1a1a2e, #0e0e12);
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 6px solid #f5c542;
+            box-shadow: 0 0 40px rgba(245, 197, 66, 0.15);
+            image-rendering: pixelated;
+        }
+        .icon-512 {
+            width: 512px;
+            height: 512px;
+            background: linear-gradient(145deg, #1a1a2e, #0e0e12);
+            border-radius: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid #f5c542;
+            box-shadow: 0 0 60px rgba(245, 197, 66, 0.2);
+            image-rendering: pixelated;
+        }
+        .icon-192 .logo { font-size: 60px; }
+        .icon-192 .text { 
+            font-size: 28px; 
+            font-weight: 900;
+            background: linear-gradient(135deg, #f0c27f, #f5a623);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+        }
+        .icon-192 .sub {
+            color: #666;
+            font-size: 10px;
+            letter-spacing: 4px;
+            margin-top: 2px;
+        }
+        
+        .icon-512 .logo { font-size: 160px; }
+        .icon-512 .text { 
+            font-size: 72px; 
+            font-weight: 900;
+            background: linear-gradient(135deg, #f0c27f, #f5a623);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 4px;
+        }
+        .icon-512 .sub {
+            color: #666;
+            font-size: 20px;
+            letter-spacing: 8px;
+            margin-top: 4px;
+        }
+        .instructions {
+            color: #888;
+            max-width: 600px;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 14px;
+            background: #0e0e12;
+            padding: 20px 30px;
+            border-radius: 16px;
+            border: 1px solid #2a2a33;
+        }
+        .instructions code {
+            background: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #f5c542;
+            font-size: 12px;
+        }
+        .btn-download {
+            background: #f5c542;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #0e0e12;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .btn-download:hover {
+            transform: scale(1.02);
+            background: #fcd15a;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-download.secondary {
+            background: #2a2a3a;
+            color: #ccc;
+        }
+        .btn-download.secondary:hover {
+            background: #3a3a4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h3 style="color: #f5c542; margin-bottom: 10px;">📸 Screenshot Icon Ini</h3>
+        <p>
+            Screenshot masing-masing icon di bawah, lalu crop menjadi persegi.<br>
+            Simpan dengan nama:
+            <code>icon-192.png</code> (untuk 192x192) dan <code>icon-512.png</code> (untuk 512x512)
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="icon-box">
+            <div class="icon-192">
+                <div class="logo">📚</div>
+                <div class="text">KAGAMI</div>
+                <div class="sub">MANGA · ANIME</div>
+            </div>
+            <div class="label">📱 192x192 px</div>
+        </div>
+
+        <div class="icon-box">
+            <div class="icon-512">
+                <div class="logo">📚</div>
+                <div class="text">KAGAMI</div>
+                <div class="sub">MANGA · ANIME</div>
+            </div>
+            <div class="label">📱 512x512 px</div>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-download" onclick="downloadIcon(192)">⬇️ Download 192x192</button>
+        <button class="btn-download" onclick="downloadIcon(512)">⬇️ Download 512x512</button>
+        <button class="btn-download secondary" onclick="downloadBoth()">⬇️ Download Both</button>
+    </div>
+
+    <div class="instructions" style="margin-top: 10px; background: #1a1a2e; border-color: #f5c542;">
+        <p style="color: #aaa; font-size: 13px;">
+            💡 <strong>Tips:</strong> Jika tombol download tidak bekerja, screenshot icon di atas,
+            crop menjadi persegi, lalu simpan sebagai PNG.
+        </p>
+    </div>
+
+    <script>
+        function downloadIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            const grad = ctx.createLinearGradient(0, 0, size, size);
+            grad.addColorStop(0, '#1a1a2e');
+            grad.addColorStop(1, '#0e0e12');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.15);
+            ctx.fill();
+
+            // Border
+            ctx.strokeStyle = '#f5c542';
+            ctx.lineWidth = size * 0.025;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.15);
+            ctx.stroke();
+
+            // Emoji
+            const emojiSize = size * 0.35;
+            ctx.font = `${emojiSize}px "Segoe UI Emoji", "Apple Color Emoji", system-ui, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('📚', size/2, size * 0.4);
+
+            // Text
+            const textSize = size * 0.13;
+            ctx.font = `bold ${textSize}px "Segoe UI", Arial, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Gradient text
+            const textGrad = ctx.createLinearGradient(0, size * 0.55, 0, size * 0.7);
+            textGrad.addColorStop(0, '#f0c27f');
+            textGrad.addColorStop(1, '#f5a623');
+            ctx.fillStyle = textGrad;
+            ctx.fillText('KAGAMI', size/2, size * 0.62);
+
+            // Sub text
+            const subSize = size * 0.045;
+            ctx.font = `${subSize}px "Segoe UI", Arial, sans-serif`;
+            ctx.fillStyle = '#666';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('MANGA · ANIME', size/2, size * 0.78);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = `icon-${size}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function downloadBoth() {
+            downloadIcon(192);
+            setTimeout(() => downloadIcon(512), 500);
+        }
+
+        // RoundRect polyfill for canvas
+        if (!CanvasRenderingContext2D.prototype.roundRect) {
+            CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {
+                const r = typeof radii === 'number' ? radii : (radii || 0);
+                this.moveTo(x + r, y);
+                this.lineTo(x + w - r, y);
+                this.quadraticCurveTo(x + w, y, x + w, y + r);
+                this.lineTo(x + w, y + h - r);
+                this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+                this.lineTo(x + r, y + h);
+                this.quadraticCurveTo(x, y + h, x, y + h - r);
+                this.lineTo(x, y + r);
+                this.quadraticCurveTo(x, y, x + r, y);
+                return this;
+            };
+        }
+    </script>
+</body>
+</html>

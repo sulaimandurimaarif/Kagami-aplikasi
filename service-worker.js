@@ -1,32 +1,60 @@
-const CACHE_NAME = 'kagami-v1';
-const urlsToCache = [
-  '/Kagami-website/',
-  '/Kagami-website/index.html',
-  '/Kagami-website/manifest.json',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
+const CACHE_NAME = 'kagami-cache-v1';
+const ASSETS = [
+  './',
+  './index.html',
+  './style.css',
+  './app.js',
+  './manifest.json'
 ];
 
-self.addEventListener('install', event => {
-  event.waitUntil(
+// Install Event
+self.addEventListener('install', (e) => {
+  e.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+      .then((cache) => {
+        console.log('SW: Caching App Shell');
+        return cache.addAll(ASSETS);
+      })
       .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys.map(key => {
-        if (key !== CACHE_NAME) return caches.delete(key);
-      }));
-    })
+// Activate Event
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log('SW: Clearing Old Cache', key);
+            return caches.delete(key);
+          }
+        })
+      );
+    }).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => response || fetch(event.request))
+// Fetch Event (Network First, fallback to cache)
+self.addEventListener('fetch', (e) => {
+  // Only cache GET requests and local requests
+  if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) {
+    return;
+  }
+
+  e.respondWith(
+    fetch(e.request)
+      .then((response) => {
+        // Clone response to add to cache
+        const resClone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(e.request, resClone);
+        });
+        return response;
+      })
+      .catch(() => {
+        // Fallback to cache if network fails
+        return caches.match(e.request);
+      })
   );
 });

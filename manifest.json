@@ -1,12 +1,11 @@
 {
-  "name": "Kagami - Baca Manga & Anime",
+  "name": "Kagami · Baca Manga & Nonton Anime",
   "short_name": "Kagami",
-  "description": "Baca manga, manhwa, manhua dan nonton anime gratis.",
-  "start_url": "/Kagami-website/",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#0e0e12",
-  "theme_color": "#0e0e12",
-  "orientation": "portrait",
+  "background_color": "#0b0b0f",
+  "theme_color": "#0b0b0f",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "icon-192.png",

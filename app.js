@@ -21,6 +21,10 @@ const DEFAULT_TITLES = [
   { id: "a-5", title: "Spy x Family", type: "Anime", rating: 4.7, episodes: 25, color: "linear-gradient(135deg, #065f46, #0f766e)", description: "A spy on an undercover mission gets married and adopts a child as part of his cover. His wife is a deadly assassin and his daughter is a telepath, but they all hide their secrets from each other.", dateAdded: "2026-04-10", views: 48000, status: "Completed" }
 ];
 
+// ====== VERSI DATA — naikkan angka ini setiap kali DEFAULT_TITLES diubah ======
+// Ini memaksa localStorage lama ter-reset otomatis saat app dibuka
+const DATA_VERSION = "v2";
+
 const DEFAULT_USERS = [
   { email: "guest@kagami.com", name: "Guest Kagami", avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Guest", password: "password123" }
 ];
@@ -28,6 +32,14 @@ const DEFAULT_USERS = [
 // ====== STATE ENGINE ======
 class AppState {
   constructor() {
+      // Auto-reset cache jika versi data berbeda (misal setelah edit DEFAULT_TITLES)
+    const savedVersion = localStorage.getItem('kagami_data_version');
+    if (savedVersion !== DATA_VERSION) {
+      localStorage.removeItem('kagami_titles');
+      localStorage.removeItem('kagami_users');
+      localStorage.setItem('kagami_data_version', DATA_VERSION);
+    }
+
     this.titles = JSON.parse(localStorage.getItem('kagami_titles')) || DEFAULT_TITLES;
     this.users = JSON.parse(localStorage.getItem('kagami_users')) || DEFAULT_USERS;
     this.currentUser = JSON.parse(localStorage.getItem('kagami_session')) || null;

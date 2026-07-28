@@ -36,8 +36,8 @@
     <div class="install-text">
       <i class="fas fa-download"></i>
       <div class="install-info">
-        <span>Pasang Kagami App</span>
-        <small>Baca manga & nonton offline lebih lancar</small>
+        <span data-i18n="install_title">Pasang Kagami App</span>
+        <small data-i18n="install_desc">Baca manga & nonton offline lebih lancar</small>
       </div>
     </div>
     <div class="install-actions">
@@ -55,16 +55,33 @@
 
     <!-- Desktop Navigation Menu -->
     <nav class="desktop-nav">
-      <a href="#" class="active" data-view-btn="explore"><i class="fas fa-compass"></i> Explore</a>
-      <a href="#" data-view-btn="latest"><i class="fas fa-fire"></i> Latest</a>
-      <a href="#" data-view-btn="saved"><i class="fas fa-bookmark"></i> Saved</a>
-      <a href="#" data-view-btn="upload"><i class="fas fa-cloud-upload-alt"></i> Upload</a>
+      <a href="#" class="active" data-view-btn="explore" data-i18n="nav_explore"><i class="fas fa-compass"></i> Explore</a>
+      <a href="#" data-view-btn="latest" data-i18n="nav_latest"><i class="fas fa-fire"></i> Latest</a>
+      <a href="#" data-view-btn="saved" data-i18n="nav_library"><i class="fas fa-layer-group"></i> Library</a>
+      <a href="#" data-view-btn="upload" data-i18n="nav_upload"><i class="fas fa-cloud-upload-alt"></i> Upload</a>
     </nav>
 
     <div class="header-actions">
       <div class="header-search">
         <i class="fas fa-search"></i>
-        <input type="text" placeholder="Cari komik atau anime..." id="headerSearchInput">
+        <input type="text" placeholder="Cari komik atau anime..." id="headerSearchInput" data-i18n-ph="search_placeholder">
+      </div>
+
+      <!-- Utility toggles: language & theme -->
+      <div class="header-utils">
+        <div class="lang-switcher" id="langSwitcher">
+          <button type="button" class="lang-btn" id="langSwitcherBtn" title="Ganti Bahasa">
+            <i class="fas fa-globe"></i> <span id="langCurrentLabel">ID</span>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button type="button" class="lang-option" data-lang="id"><span>🇮🇩</span> Bahasa Indonesia</button>
+            <button type="button" class="lang-option" data-lang="en"><span>🇬🇧</span> English</button>
+          </div>
+        </div>
+        <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Ganti Mode Terang/Gelap">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
       </div>
       
       <!-- Account Badge Dynamic -->
@@ -79,31 +96,37 @@
 
     <!-- 1. EXPLORE VIEW (HOME) -->
     <div class="app-view active" id="exploreView">
-      <!-- Hero Slider/Featured -->
-      <section class="featured-hero">
-        <div class="featured-hero-info">
-          <h2><i class="fas fa-crown"></i> Solo Leveling</h2>
-          <p>Ikuti perjalanan Sung Jinwoo dari Hunter terlemah di dunia hingga menjadi Shadow Monarch legendaris dalam adaptasi Webtoon terpopuler.</p>
+      <!-- Now Trending Carousel -->
+      <section class="trending-section">
+        <div class="trending-header">
+          <h3><span class="trending-bar"></span> <span data-i18n="trending_title">Now Trending</span></h3>
+          <div class="trending-nav">
+            <button type="button" class="trending-nav-btn" id="trendingPrevBtn"><i class="fas fa-chevron-left"></i></button>
+            <button type="button" class="trending-nav-btn" id="trendingNextBtn"><i class="fas fa-chevron-right"></i></button>
+          </div>
         </div>
-        <div class="featured-hero-tag"><i class="fas fa-bolt"></i> 179 Chapters Lengkap</div>
+        <p class="trending-sub" data-i18n="trending_sub">Most read today.</p>
+        <div class="trending-track" id="trendingTrack">
+          <!-- Diisi oleh JS: renderTrendingGrid() -->
+        </div>
       </section>
 
       <!-- Category Filter Chips -->
       <div class="filter-container">
         <div class="filter-chips">
-          <span class="chip active" data-filter="all"><i class="fas fa-border-all"></i> Semua</span>
-          <span class="chip" data-filter="manga"><i class="fas fa-book"></i> Manga</span>
-          <span class="chip" data-filter="manhwa"><i class="fas fa-palette"></i> Manhwa</span>
-          <span class="chip" data-filter="manhua"><i class="fas fa-mountain"></i> Manhua</span>
-          <span class="chip" data-filter="anime"><i class="fas fa-play-circle"></i> Anime</span>
+          <span class="chip active" data-filter="all"><i class="fas fa-border-all"></i> <span data-i18n="chip_all">Semua</span></span>
+          <span class="chip" data-filter="manga"><i class="fas fa-book"></i> <span data-i18n="chip_manga">Manga</span></span>
+          <span class="chip" data-filter="manhwa"><i class="fas fa-palette"></i> <span data-i18n="chip_manhwa">Manhwa</span></span>
+          <span class="chip" data-filter="manhua"><i class="fas fa-mountain"></i> <span data-i18n="chip_manhua">Manhua</span></span>
+          <span class="chip" data-filter="anime"><i class="fas fa-play-circle"></i> <span data-i18n="chip_anime">Anime</span></span>
         </div>
       </div>
 
       <!-- Manga Section -->
       <section class="section-wrapper" id="exploreMangaSection">
         <div class="section-title">
-          <h3><i class="fas fa-book" style="color: var(--accent-gold);"></i> Hot Manga</h3>
-          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manga">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+          <h3><i class="fas fa-book" style="color: var(--accent-gold);"></i> <span data-i18n="sec_hot_manga">Hot Manga</span></h3>
+          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manga"><span data-i18n="view_all">Lihat Semua</span> <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="card-grid" id="exploreMangaGrid"></div>
       </section>
@@ -111,8 +134,8 @@
       <!-- Manhwa Section -->
       <section class="section-wrapper" id="exploreManhwaSection">
         <div class="section-title">
-          <h3><i class="fas fa-palette" style="color: #6fc3df;"></i> Trending Manhwa</h3>
-          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manhwa">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+          <h3><i class="fas fa-palette" style="color: #6fc3df;"></i> <span data-i18n="sec_trending_manhwa">Trending Manhwa</span></h3>
+          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manhwa"><span data-i18n="view_all">Lihat Semua</span> <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="card-grid" id="exploreManhwaGrid"></div>
       </section>
@@ -120,8 +143,8 @@
       <!-- Manhua Section -->
       <section class="section-wrapper" id="exploreManhuaSection">
         <div class="section-title">
-          <h3><i class="fas fa-mountain" style="color: #e6a8d7;"></i> Epic Manhua</h3>
-          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manhua">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+          <h3><i class="fas fa-mountain" style="color: #e6a8d7;"></i> <span data-i18n="sec_epic_manhua">Epic Manhua</span></h3>
+          <a href="#" class="view-all" data-view-btn="category-view" data-category="Manhua"><span data-i18n="view_all">Lihat Semua</span> <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="card-grid" id="exploreManhuaGrid"></div>
       </section>
@@ -129,8 +152,8 @@
       <!-- Anime Section -->
       <section class="section-wrapper" id="exploreAnimeSection">
         <div class="section-title">
-          <h3><i class="fas fa-play-circle" style="color: var(--accent-coral);"></i> Tonton Anime</h3>
-          <a href="#" class="view-all" data-view-btn="category-view" data-category="Anime">Lihat Semua <i class="fas fa-chevron-right"></i></a>
+          <h3><i class="fas fa-play-circle" style="color: var(--accent-coral);"></i> <span data-i18n="sec_watch_anime">Tonton Anime</span></h3>
+          <a href="#" class="view-all" data-view-btn="category-view" data-category="Anime"><span data-i18n="view_all">Lihat Semua</span> <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="card-grid" id="exploreAnimeGrid"></div>
       </section>
@@ -139,27 +162,92 @@
     <!-- 2. LATEST VIEW -->
     <div class="app-view" id="latestView">
       <div class="section-title">
-        <h3><i class="fas fa-fire" style="color: var(--accent-coral);"></i> Rilis Terbaru</h3>
+        <h3><i class="fas fa-fire" style="color: var(--accent-coral);"></i> <span data-i18n="sec_latest">Rilis Terbaru</span></h3>
       </div>
       <div class="card-grid" id="latestGrid"></div>
     </div>
 
-    <!-- 3. SAVED VIEW -->
+    <!-- 3. LIBRARY VIEW (Favorit + Riwayat Baca) -->
     <div class="app-view" id="savedView">
       <div class="section-title">
-        <h3><i class="fas fa-bookmark" style="color: var(--accent-gold);"></i> Koleksi Favorit</h3>
+        <h3><i class="fas fa-layer-group" style="color: var(--accent-gold);"></i> <span data-i18n="library_title">Pustaka Saya</span></h3>
       </div>
-      <div class="card-grid" id="savedGrid"></div>
+
+      <div class="lib-tabs-nav">
+        <button class="lib-tab-btn active" data-lib-panel="libFavoritPanel">
+          <i class="fas fa-heart"></i> <span data-i18n="library_tab_fav">Favorit</span>
+        </button>
+        <button class="lib-tab-btn" data-lib-panel="libHistoryPanel">
+          <i class="fas fa-history"></i> <span data-i18n="library_tab_history">Riwayat Baca</span>
+        </button>
+      </div>
+
+      <div class="lib-panel active" id="libFavoritPanel">
+        <div class="card-grid" id="savedGrid"></div>
+      </div>
+
+      <div class="lib-panel" id="libHistoryPanel">
+        <div class="lib-history-toolbar">
+          <small data-i18n="library_history_desc">Judul dan chapter/episode terakhir yang Anda baca.</small>
+          <button class="btn-clear-history" id="clearHistoryBtn"><i class="fas fa-trash-alt"></i> <span data-i18n="library_clear_history">Hapus Riwayat</span></button>
+        </div>
+        <div class="history-list" id="historyGrid"></div>
+      </div>
     </div>
 
     <!-- 4. DEDICATED SEARCH VIEW -->
     <div class="app-view" id="searchView">
-      <div class="upload-form-wrapper" style="padding: 1.5rem; margin-bottom: 2rem; max-width: 100%;">
+      <div class="upload-form-wrapper" style="padding: 1.5rem; margin-bottom: 1rem; max-width: 100%;">
         <div style="display: flex; align-items: center; gap: 12px; background: var(--surface-secondary); padding: 0.8rem 1.2rem; border-radius: 16px; border: 1px solid var(--border-color);">
           <i class="fas fa-search" style="color: var(--text-secondary); font-size: 1.1rem;"></i>
-          <input type="text" placeholder="Masukkan judul manga, manhwa, manhua, atau anime..." id="searchQueryInput" style="background: transparent; border: none; outline: none; color: white; width: 100%; font-size: 1rem;">
+          <input type="text" placeholder="Masukkan judul manga, manhwa, manhua, atau anime..." id="searchQueryInput" data-i18n-ph="search_input_placeholder" style="background: transparent; border: none; outline: none; color: white; width: 100%; font-size: 1rem;">
+          <button type="button" class="btn-toggle-advanced" id="toggleAdvancedSearchBtn" title="Filter Lanjutan">
+            <i class="fas fa-sliders-h"></i>
+          </button>
         </div>
         <small id="searchStateDesc" style="display:block; margin-top: 8px; color: var(--text-tertiary); font-weight: 500;"></small>
+
+        <!-- Advanced Filter Panel -->
+        <div class="advanced-search-panel" id="advancedSearchPanel">
+          <div class="adv-search-row">
+            <div class="adv-search-field">
+              <label data-i18n="filter_format">Format</label>
+              <select id="filterFormat">
+                <option value="all" data-i18n="filter_all">Semua</option>
+                <option value="Manga">Manga</option>
+                <option value="Manhwa">Manhwa</option>
+                <option value="Manhua">Manhua</option>
+                <option value="Anime">Anime</option>
+              </select>
+            </div>
+            <div class="adv-search-field">
+              <label data-i18n="filter_status">Status</label>
+              <select id="filterStatus">
+                <option value="all" data-i18n="filter_all">Semua</option>
+                <option value="Ongoing" data-i18n="filter_ongoing">Ongoing</option>
+                <option value="Completed" data-i18n="filter_completed">Completed</option>
+              </select>
+            </div>
+            <div class="adv-search-field">
+              <label data-i18n="filter_sort">Urutkan</label>
+              <select id="filterSort">
+                <option value="relevance" data-i18n="sort_relevance">Relevansi</option>
+                <option value="rating_desc" data-i18n="sort_rating">Rating Tertinggi</option>
+                <option value="latest" data-i18n="sort_latest">Terbaru</option>
+                <option value="popular" data-i18n="sort_popular">Paling Populer</option>
+                <option value="title_asc" data-i18n="sort_title">Judul A-Z</option>
+              </select>
+            </div>
+          </div>
+          <div class="adv-search-field adv-genre-field">
+            <label data-i18n="filter_genre">Genre</label>
+            <div class="genre-chip-list" id="filterGenreChips"><!-- Diisi oleh JS --></div>
+          </div>
+          <div class="adv-search-actions">
+            <small id="authorFilterBadge" style="display:none;"></small>
+            <button type="button" class="btn-reset-filters" id="resetFiltersBtn" data-i18n="filter_reset">Reset Filter</button>
+          </div>
+        </div>
       </div>
       <div class="card-grid" id="searchResultsGrid"></div>
     </div>
@@ -195,9 +283,20 @@
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="form-group">
+              <label for="uploadRating">Rating Awal *</label>
+              <input type="number" id="uploadRating" class="form-control" min="1" max="5" step="0.1" placeholder="4.5" required>
+            </div>
+            <div class="form-group">
+              <label for="uploadAuthor">Penulis / Studio</label>
+              <input type="text" id="uploadAuthor" class="form-control" placeholder="Contoh: Eiichiro Oda">
+            </div>
+          </div>
+
           <div class="form-group">
-            <label for="uploadRating">Rating Awal *</label>
-            <input type="number" id="uploadRating" class="form-control" min="1" max="5" step="0.1" placeholder="4.5" required>
+            <label for="uploadGenre">Genre (pisahkan dengan koma)</label>
+            <input type="text" id="uploadGenre" class="form-control" placeholder="Contoh: Action, Fantasy, Adventure">
           </div>
 
           <div class="form-group">
@@ -210,7 +309,24 @@
               </div>
               
               <div class="cover-options">
-                <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom: 8px;">Unggah berkas gambar sampul Anda atau pilih salah satu latar gradasi default berikut:</p>
+                <!-- URL Input (Prioritas utama) -->
+                <div class="form-group" style="margin-bottom: 10px;">
+                  <label for="uploadCoverUrl" style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:6px; display:block;">
+                    <i class="fas fa-link" style="color:var(--accent-gold);"></i> Tempel URL Gambar Cover (Disarankan)
+                  </label>
+                  <input
+                    type="url"
+                    id="uploadCoverUrl"
+                    class="form-control"
+                    placeholder="https://contoh.com/gambar-cover.jpg"
+                    style="font-size:0.85rem;"
+                  >
+                  <small style="color:var(--text-tertiary); font-size:0.75rem; display:block; margin-top:4px;">
+                    💡 Gunakan link dari Imgur, i.ibb.co, atau Google Drive (format direct link)
+                  </small>
+                </div>
+
+                <p style="font-size:0.75rem; color:var(--text-tertiary); margin-bottom: 8px; text-align:center;">— atau unggah dari galeri (offline only) —</p>
                 
                 <div class="btn-file-upload">
                   <i class="fas fa-image"></i> Pilih Gambar dari Galeri
@@ -261,23 +377,23 @@
   <nav class="bottom-nav">
     <button class="nav-item active" data-view-btn="explore">
       <i class="fas fa-compass"></i>
-      <span>Explore</span>
+      <span data-i18n="nav_explore">Explore</span>
     </button>
     <button class="nav-item" data-view-btn="latest">
       <i class="fas fa-fire"></i>
-      <span>Latest</span>
+      <span data-i18n="nav_latest">Latest</span>
     </button>
     <button class="nav-item" data-view-btn="search">
       <i class="fas fa-search"></i>
-      <span>Cari</span>
+      <span data-i18n="nav_search">Cari</span>
     </button>
     <button class="nav-item" data-view-btn="saved">
-      <i class="fas fa-bookmark"></i>
-      <span>Saved</span>
+      <i class="fas fa-layer-group"></i>
+      <span data-i18n="nav_library">Library</span>
     </button>
     <button class="nav-item" data-view-btn="upload">
       <i class="fas fa-cloud-upload-alt"></i>
-      <span>Unggah</span>
+      <span data-i18n="nav_upload_short">Unggah</span>
     </button>
   </nav>
 
@@ -296,6 +412,9 @@
             <h2>Solo Leveling</h2>
             <div class="detail-info-tags">
               <!-- Tags injected by JS -->
+            </div>
+            <div class="detail-author-row" id="detailAuthorRow">
+              <!-- Author link injected by JS -->
             </div>
           </div>
         </div>
@@ -325,13 +444,20 @@
             </div>
           </div>
           
+          <div class="detail-genre-list" id="detailGenreList">
+            <!-- Genre chips injected by JS -->
+          </div>
+
           <p class="detail-description-text">
             Deskripsi sinopsis di sini...
           </p>
 
           <div class="detail-actions">
             <button class="btn-detail-action btn-detail-read">
-              <i class="fas fa-book-open"></i> Read Now
+              <i class="fas fa-book-open"></i> Mulai Membaca
+            </button>
+            <button class="btn-detail-action btn-detail-watch" id="detailWatchAnimeBtn" style="display:none; background: linear-gradient(135deg, #7c3aed, #a855f7);">
+              <i class="fas fa-play-circle"></i> Tonton Anime
             </button>
             <button class="btn-detail-action btn-detail-bookmark">
               <i class="far fa-heart"></i> Save
@@ -349,6 +475,138 @@
     </div>
   </div>
 
+  <!-- ====== ANIME COMING SOON MODAL ====== -->
+  <div class="modal-overlay" id="animeComingSoonModal">
+    <div class="anime-cs-container">
+      <button class="modal-close" onclick="document.getElementById('animeComingSoonModal').classList.remove('active')"><i class="fas fa-times"></i></button>
+
+      <div class="anime-cs-rotated-badge">COMING<br>SOON</div>
+
+      <!-- LEFT: Text Content -->
+      <div class="anime-cs-left">
+        <div class="anime-cs-eyebrow" data-i18n="anime_cs_eyebrow">CURRENTLY IN THE WORKS</div>
+        <h2 class="anime-cs-heading">
+          <span data-i18n="anime_cs_heading_1">Anime is coming</span><br>
+          <span class="anime-cs-heading-italic" data-i18n="anime_cs_heading_2">soon.</span>
+        </h2>
+        <p class="anime-cs-desc" data-i18n="anime_cs_desc">A calm, beautiful viewing experience connected to your Kagami library is now in development.</p>
+        <p class="anime-cs-target">
+          <span id="animeCSTitle">Jujutsu Kaisen</span> · <span id="animeCSEpisode">Episode 1</span>
+        </p>
+        <button class="anime-cs-notif-btn" onclick="document.getElementById('animeComingSoonModal').classList.remove('active'); showToast('🔔 Notifikasi aktif! Kami akan memberitahu ketika video tersedia.')">
+          <i class="fas fa-star"></i> <span data-i18n="anime_cs_notify">Notify me</span>
+        </button>
+      </div>
+
+      <!-- RIGHT: Animated Character Illustration -->
+      <div class="anime-cs-right">
+        <span class="anime-cs-sparkle sparkle-1">✦</span>
+        <span class="anime-cs-sparkle sparkle-2">✧</span>
+        <span class="anime-cs-sparkle sparkle-3">✦</span>
+
+        <div class="anime-cs-char-wrap">
+          <svg class="anime-cs-svg" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="haloGlow" cx="50%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#ffd873"/>
+                <stop offset="60%" stop-color="#f5c542"/>
+                <stop offset="100%" stop-color="#f5c542" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Glowing halo behind character -->
+            <circle class="cs-halo" cx="200" cy="165" r="150" fill="url(#haloGlow)"/>
+
+            <!-- Floating character group -->
+            <g class="cs-character">
+              <!-- Hair back / hoodie silhouette -->
+              <path d="M 55 520 L 55 355 Q 55 195 200 165 Q 345 195 345 355 L 345 520 Z" fill="#171720"/>
+
+              <!-- Face -->
+              <ellipse cx="200" cy="262" rx="70" ry="84" fill="#f4d7b8"/>
+              <ellipse cx="200" cy="290" rx="70" ry="56" fill="#f0cca6" opacity="0.5"/>
+
+              <!-- Spiky bangs -->
+              <path d="M 132 218 L 148 158 L 163 212 L 178 145 L 197 216 L 218 145 L 235 212 L 252 158 L 268 220 L 250 224 L 200 200 L 150 224 Z" fill="#15151c"/>
+
+              <!-- Closed eyes -->
+              <path d="M 168 252 Q 181 242 195 252" stroke="#2a1c14" stroke-width="5" fill="none" stroke-linecap="round"/>
+              <path d="M 205 252 Q 219 242 232 252" stroke="#2a1c14" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+              <!-- Mouth -->
+              <rect x="187" y="296" width="26" height="5" rx="2.5" fill="#a85d43"/>
+
+              <!-- Scarf -->
+              <path d="M 128 342 Q 200 378 272 342 L 284 400 Q 200 436 116 400 Z" fill="#8a3324"/>
+              <path d="M 116 400 Q 200 436 284 400 L 280 430 Q 200 460 120 430 Z" fill="#732818"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== IMMERSIVE READER / WATCHER MODAL ====== -->
+  <div class="modal-overlay reader-modal-overlay" id="readerModal">
+    <div class="reader-container">
+      <!-- Reader Header Bar -->
+      <div class="reader-header">
+        <button class="btn-reader-back" id="closeReaderBtn">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="reader-title-info">
+          <h3 id="readerTitle">Solo Leveling</h3>
+          <span id="readerSubtitle">Chapter 179</span>
+        </div>
+        <div class="reader-controls">
+          <!-- Manga Layout Mode Buttons (Only shown for manga) -->
+          <div id="mangaControls" class="reader-mode-group">
+            <button class="btn-reader-mode active" id="modeScrollBtn" title="Webtoon Scroll Mode">
+              <i class="fas fa-arrows-alt-v"></i> <span>Scroll</span>
+            </button>
+            <button class="btn-reader-mode" id="modePageBtn" title="Single Page Mode">
+              <i class="fas fa-book-open"></i> <span>Page</span>
+            </button>
+            <button class="btn-download-chapter" id="downloadChapterBtn" title="Unduh Semua Halaman Chapter Ini" onclick="downloadCurrentChapter()">
+              <i class="fas fa-cloud-download-alt"></i> <span>Unduh</span>
+            </button>
+          </div>
+          <!-- Anime Ambient Light toggle (Only shown for anime) -->
+          <div id="animeControls" class="reader-mode-group" style="display:none;">
+            <button class="btn-reader-mode active" id="ambientGlowBtn" title="Cinema Light Mode">
+              <i class="fas fa-lightbulb"></i> <span>Ambient Glow</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reader Content Area -->
+      <div class="reader-content-body">
+        <!-- Manga Content View -->
+        <div id="mangaContentArea" class="reader-view-panel scroll-mode active">
+          <!-- Images or Canvas panels are injected here -->
+        </div>
+
+
+      </div>
+
+      <!-- Navigation Footer (Only shown for Manga or when video completes) -->
+      <div class="reader-footer" id="readerFooter">
+        <button class="btn-nav-chap" id="prevChapBtn">
+          <i class="fas fa-chevron-left"></i> Sebelumnya
+        </button>
+        <div class="nav-chap-selector">
+          <select id="readerChapterSelector">
+            <!-- Dynamically populated options -->
+          </select>
+        </div>
+        <button class="btn-nav-chap" id="nextChapBtn">
+          Selanjutnya <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Authentication overlay Modal -->
   <div class="modal-overlay" id="authModal">
     <div class="modal-container">
@@ -356,16 +614,9 @@
       <div class="auth-modal-body">
         
         <div class="auth-tabs">
-          <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Masuk</div>
-          <div class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">Daftar</div>
+          <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')" data-i18n="auth_tab_login">Masuk</div>
+          <div class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')" data-i18n="auth_tab_signup">Daftar</div>
         </div>
-
-        <!-- simulated Google Action Buttons -->
-        <button class="google-auth-btn btn-google-action">
-          <i class="fab fa-google"></i> Lanjutkan dengan Google
-        </button>
-
-        <div class="auth-divider">atau dengan email</div>
 
         <!-- Form 1: Log In -->
         <div class="auth-form-panel active" id="panelLogin">
@@ -412,9 +663,9 @@
       <span>Kagami</span>
     </a>
     <div class="footer-links">
-      <a href="#" onclick="event.preventDefault(); showToast('Kagami - Platform Baca Komik PWA Premium');">Tentang</a>
-      <a href="#" onclick="event.preventDefault(); showToast('Hubungi kami di: support@kagami.com');">Kontak</a>
-      <a href="#" onclick="event.preventDefault(); showToast('Kebijakan Privasi data pengguna tersimpan di browser Anda.');">Privasi</a>
+      <a href="#" onclick="event.preventDefault(); showToast('Kagami - Platform Baca Komik PWA Premium');" data-i18n="footer_about">Tentang</a>
+      <a href="#" onclick="event.preventDefault(); showToast('Hubungi kami di: support@kagami.com');" data-i18n="footer_contact">Kontak</a>
+      <a href="#" onclick="event.preventDefault(); showToast('Kebijakan Privasi data pengguna tersimpan di browser Anda.');" data-i18n="footer_privacy">Privasi</a>
     </div>
     <div class="footer-copy">
       © 2026 Kagami · read freely

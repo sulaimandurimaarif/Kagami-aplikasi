@@ -723,6 +723,18 @@ body.light-theme .theme-toggle-btn .fa-sun { display: none; }
   transform: scale(1.06);
 }
 
+/* Efek kilau/mengkilat yang menyapu di atas cover — berlaku untuk gambar asli (coverUrl) maupun placeholder gradient */
+.card-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.16) 42%, transparent 60%);
+  background-size: 250% 250%;
+  animation: trendingShimmer 3.4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .card-img-placeholder {
   font-size: 3rem;
   color: var(--text-tertiary);
@@ -1475,6 +1487,29 @@ body.light-theme .theme-toggle-btn .fa-sun { display: none; }
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  max-height: 140px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
+/* Scrollbar tipis khusus untuk area sinopsis */
+.detail-description-text::-webkit-scrollbar {
+  width: 4px;
+}
+.detail-description-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+.detail-description-text::-webkit-scrollbar-thumb {
+  background: var(--surface-tertiary);
+  border-radius: 10px;
+}
+.detail-description-text::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+.detail-description-text {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-tertiary) transparent;
 }
 
 /* Action Buttons (Details Modal) */
@@ -2313,6 +2348,18 @@ body.light-theme .theme-toggle-btn .fa-sun { display: none; }
 
   .user-profile-badge span {
     max-width: 60px;
+  }
+
+  /* Sinopsis lebih ringkas di HP: tinggi scroll lebih pendek, scrollbar lebih tipis */
+  .detail-description-text {
+    max-height: 110px;
+    font-size: 0.85rem;
+    padding-right: 8px;
+    margin-right: -8px;
+  }
+
+  .detail-description-text::-webkit-scrollbar {
+    width: 3px;
   }
 }
 

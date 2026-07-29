@@ -120,6 +120,21 @@ const DEFAULT_TITLES = [
         "https://picsum.photos/seed/m-13-3/800/1200"
       ]
     }, description: { en: "Saitama used to be just an ordinary man in a world where being a hero was a profession. However, after encountering a boy under attack by a monster, he recalled his childhood dream of becoming a hero. He then trained every day until all his hair fell out. Saitama became a powerful hero, yet one thing troubled him: he had become so strong that he could defeat any monster with just a single punch.", id: "Saitama dulunya hanyalah lelaki biasa dalam dunia dimana pahlawan menjadi sebuah pekerjaan. Tetapi ketika Ia bertemu dengan seorang anak lelaki yang sedang diserang monster, dia mengingat cita-cita masa kecilnya untuk menjadi pahlawan. Lalu dia berlatih setiap hari hingga semua rambutnya rontok. Saitama pun menjadi pahlawan yang kuat, tetapi ada satu hal yang mencemaskan dia. Yaitu dia menjadi terlalu kuat, hingga dia dapat mengalahkan setiap monster hanya dengan satu tinjuan." }, dateAdded: "2026-06-12", views: 33000, status: "Ongoing", author: "Mad Snail", genre: ["Action", "Fantasy", "Reincarnation"] },
+{ id: "m-14", title: "I Randomly Have A New Career Every Week", type: "Manhua", rating: 4.7, chapters: 1, coverUrl: "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/one%20punch%20man.jpg?raw=true",
+    // Contoh placeholder (ganti dengan URL hosting gambar chapter asli kamu)
+    chapterImages: {
+      1: [
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/002.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/003.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/004.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/005.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/006.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/007.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/008.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/009.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/010.jpg?raw=true"
+      ]
+    }, description: { en: "After being let go by his company, Lin Yi accidentally acquires a "Professional Part-Time Worker Experience" system. Leveraging the various professional assignments and generous rewards provided by the system, he steadily pursues his ambitions and path to wealth, eventually rising to become an all-powerful tycoon who dominates the world.", id: "Setelah diberhentikan oleh perusahaan, Lin Yi mendapatkan sistem “pengalaman pekerja paruh waktu profesional” secara tidak sengaja. Lin Yi mengandalkan berbagai pengaturan profesional dan penghargaan murah hati yang diberikan oleh sistem untuk mencapai ambisinya dan jalannya untuk menjadi kaya selangkah demi selangkah semakin tertuju, sampai akhirnya menjadi bos yang sangat kuat untuk mendominasi dunia." }, dateAdded: "2026-06-12", views: 12000, status: "Ongoing", author: "Mad Snail", genre: ["Action", "Fantasy", "Reincarnation"] },
 
   // Anime items
   { id: "a-1", title: "Jujutsu Kaisen", type: "Anime", rating: 4.8, episodes: 24, color: "linear-gradient(135deg, #1e1b4b, #4338ca)", description: { en: "Yuuji Itadori, a high school student who harbors extraordinary physical abilities, swallows the finger of Ryomen Sukuna, a curse, to save a friend. He joins the Tokyo Metropolitan Jujutsu Technical High School to find all of Sukuna's fingers and exorcise the curse.", id: "Yuuji Itadori, murid SMA dengan kemampuan fisik luar biasa, menelan jari Ryomen Sukuna, sebuah kutukan, demi menyelamatkan temannya. Ia bergabung dengan Sekolah Teknik Jujutsu Tokyo untuk mengumpulkan seluruh jari Sukuna dan mengusir kutukan itu selamanya." }, dateAdded: "2026-06-25", views: 88000, status: "Completed", author: "Studio MAPPA", genre: ["Action", "Supernatural", "Horror"] },
@@ -131,7 +146,7 @@ const DEFAULT_TITLES = [
 
 // ====== VERSI DATA — naikkan angka ini setiap kali DEFAULT_TITLES diubah ======
 // Ini memaksa localStorage lama ter-reset otomatis saat app dibuka
-const DATA_VERSION = "v8";
+const DATA_VERSION = "v9";
 
 const DEFAULT_USERS = [
   { email: "guest@kagami.com", name: "Guest Kagami", avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Guest", password: "password123" }

@@ -4,85 +4,15 @@ const DEFAULT_TITLES = [
     // Contoh placeholder (ganti dengan URL hosting gambar chapter asli kamu)
     chapterImages: {
       179: [
-        "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510324/cagp2ynioo7tbsa12ch6.jpg",
-        "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510325/yasxhzuhmmoek4dann01.jpg",
-        "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510326/lpuv9616snurubqnimlo.jpg",
-        "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510327/iiojtvacowo82g3rd3ku.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510327/rhh7pwclbtnayschuvwp.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510328/qcnls3fezhjclzsvjukf.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510339/kkclo0zfkn7sddz0mky7.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510340/tmd1d8kmnw2kjklyhs4m.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510343/tzhrgb2qo2dmqdnmvfy2.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510344/rih9tpo1r0ancsf2z5am.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510344/vbbzvshwmc4mo4dvlbvh.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510345/qw9bxufvpdpmeevd4euf.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510347/jmqv1imtec1qvn7ndis8.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510347/bja6prvzt6c91rfiqdy0.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510348/ceihopsoxutmdj0ljnis.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510349/jd3rwbaasi64mooyqiif.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510351/ig8yhfdd3mfss9cimu2v.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510351/dqjm4qojpx0xqt7fper5.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510353/mz7qlofouulxxjipsujv.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510353/siihu8mjeb3gpi9pup1h.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510354/eguyoqfiy63lokpf5pin.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510355/lzx8g4griroopiybcwgs.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510356/ispyy5dj2l5vypjytp1e.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510357/iwnucuhw7vx1yuavcwku.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510357/zhrfdtao29c3hv4qdnpo.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510358/vkgvgwcg6xwrgs2pmbug.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510359/uacbxjjpzx7tu0ofwjrj.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510360/q9udic5wo8vttciexsn1.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510361/ok2mdln3ceeqz8ajlluh.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510362/ntjab9k7wkan9xt9nsch.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510363/onahzmeb4brn3pdd9hqr.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510364/q09tk4akehkyq7tq0rqc.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510365/jr8azeijxhsfatrz1avp.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510366/jxeww7biap69thpmizex.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510366/kf7o5bqxacnq91apaklx.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510367/epsm33nfjsefwtdzxmdi.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510368/rpscu2otlygltoafe4lv.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510369/zmjoe1of5xqh4id6xj48.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510370/vguxfi5z2sres4way09y.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510371/cqz8ulli5axkpelpdcso.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510372/e8isjrzat0cuyqpictze.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510372/tn7mt8wmgjotrr17sqa3.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510374/nkmgn4ezz5fahjnyz1ob.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510375/bzxx26pigpglcsd02lzh.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510375/ktkkb0anhfnoitrmx2li.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510376/j6b63odojnv1ywtgatyg.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510378/qdmpxasmkvoiwxxyxmtz.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510378/fxcbmcksnzsz5mz2aehy.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510379/adyona9escjo30v301gl.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510380/hvltyfrqmsg2xjrzdr9u.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510381/mysgiqdrjll1ffhnpcpb.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510381/uapyxuaxtjxrs2vek2kk.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510382/cb6sd7avb6wsaanoflij.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510383/shivbhwpndk9daqzwiyo.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510384/apph2ccttslhgwyss773.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510386/bgxf76jwgveoxxg4cyd6.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510386/hxs7hlunwwriozoq2kjf.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510387/pjugrjwh3gsyjigb3gcw.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510389/zqqhtzw0bbu3pj52bcnv.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510390/xa2vdbud0l9qujcy0vxh.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510391/fhhxg4kzlribtqu8gqnj.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510391/b2uzlfpgxjwa8g3fivqe.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510392/agyixzfsqol6wq5dujxk.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510393/pt6frtj7fpj4xmzxkjfj.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510393/tuqwhrnrxyhymjpwgomk.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510394/udwybkivxzmla9akcagz.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510395/aaxcdm2owh901ppxasul.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510396/kskskfjfeyswgmxwew41.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510396/dldha0p6e4ovgshom8k2.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510397/f1hkyawikt3h6jkdcrkp.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510398/zvualm1oxsmbhauhmo1u.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510399/wtafhhq4bphlzqy6hx11.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510399/otvaddicftr5i7z7ajvu.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510400/c4hlzy81r7hn0n2go6xg.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510401/fffndpqjvhnpj4llq85o.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510403/vme6nzccpdew6tr27mfr.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510403/vks5lxwwxzsi4flvcljz.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510404/wizb7pl6wrwmzvhgzahd.jpg",
-      "https://res.cloudinary.com/afzv0bq5/image/upload/v1785510405/fmzp6xq1gftyutt4nx23.jpg"
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/002.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/003.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/004.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/005.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/006.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/007.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/008.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/009.jpg?raw=true",
+        "https://github.com/sulaimandurimaarif/Manga-Cover/blob/main/i-randomly-have-a-new-career-every-week-chapter-001/010.jpg?raw=true"
       ]
     }, description: { en: "In a world where hunters must battle deadly monsters to protect mankind, Sung Jinwoo, the weakest hunter of all mankind, finds himself in a struggle for survival in a double dungeon. After surviving a near-death trial, he awakens with a unique system that allows him to level up without limits.", id: "Di dunia tempat para hunter harus bertarung melawan monster mematikan demi melindungi umat manusia, Sung Jinwoo — hunter terlemah yang pernah ada — terjebak dalam perjuangan hidup-mati di sebuah double dungeon. Setelah nyaris tewas, ia terbangun dengan sebuah sistem unik yang memungkinkannya naik level tanpa batas." }, dateAdded: "2026-01-10", views: 24500, status: "Completed", author: "Chugong", genre: ["Action", "Fantasy", "Adventure"] },
   { id: "m-2", title: "One Piece", type: "Manga", rating: 4.8, chapters: 1102, coverUrl: "https://raw.githubusercontent.com/sulaimandurimaarif/Manga-Cover/main/One%20Piece.png?v=2",
@@ -1343,7 +1273,8 @@ function openDetailsModal(id) {
     });
   }
 
-  const totalCount = item.chapters || item.episodes || 0;
+  const totalCount = isAnime ? (item.episodes || 0) : getChapterCount(item);
+  const latestChapter = isAnime ? totalCount : getLatestChapter(item);
 
   // Meta grid
   metaVal1.innerHTML = `<i class="fas fa-star"></i> ${item.rating}`;
@@ -1357,7 +1288,7 @@ function openDetailsModal(id) {
   readBtn.innerHTML = `<i class="fas fa-book-open"></i> ${t('btn_start_reading')}`;
   readBtn.onclick = () => {
     overlay.classList.remove('active');
-    openReader(item.id, totalCount);
+    openReader(item.id, latestChapter);
   };
 
   // Bookmark active state
@@ -1381,9 +1312,8 @@ function openDetailsModal(id) {
   // Generate daftar chapter (manga/manhwa/manhua) ATAU daftar episode (anime)
   let chaptersHTML = '';
   
-  // Show at most last 15 chapters/eps, in descending order
-  const maxChapters = Math.min(totalCount, 15);
-  for (let i = totalCount; i > totalCount - maxChapters; i--) {
+  // Tampilkan SEMUA chapter/episode dari yang terbaru sampai chapter 1
+  for (let i = totalCount; i >= 1; i--) {
     const pubDate = new Date(new Date(item.dateAdded).getTime() - ((totalCount - i) * 24 * 60 * 60 * 1000)).toLocaleDateString(state.lang === 'en' ? 'en-US' : 'id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
 
     const clickAction = isAnime
@@ -1487,6 +1417,28 @@ function closeReader() {
   readerActiveItem = null;
 }
 
+// ====== CHAPTER LIST HELPERS ======
+// Mendukung 2 format field "chapters" pada data manga:
+// 1) ANGKA (lama)  -> chapters: 1102        artinya chapter 1..1102 dianggap ada
+// 2) ARRAY (baru)  -> chapters: [1, 2]      artinya cuma chapter 1 & 2 yang benar-benar ada
+function getChapterList(item) {
+  const ch = item.chapters;
+  if (Array.isArray(ch)) {
+    return ch.slice().sort((a, b) => a - b);
+  }
+  const n = ch || item.episodes || 0;
+  return Array.from({ length: n }, (_, i) => i + 1);
+}
+// Jumlah chapter (buat ditampilkan di card, mis. "2 ch")
+function getChapterCount(item) {
+  return Array.isArray(item.chapters) ? item.chapters.length : (item.chapters || item.episodes || 0);
+}
+// Chapter terakhir/terbaru (buat dibuka pas klik "Mulai Membaca")
+function getLatestChapter(item) {
+  const list = getChapterList(item);
+  return list.length > 0 ? list[list.length - 1] : 1;
+}
+
 // ====== MANGA READER LOGIC ======
 function initMangaReader() {
   const container = document.getElementById('mangaContentArea');
@@ -1563,8 +1515,6 @@ function createMangaImageHTML(src, pageNum, total) {
   if (!src) {
     return `<div class="manga-img-page manga-img-placeholder"><i class="fas fa-image"></i><p>Gambar tidak tersedia</p></div>`;
   }
-  const safeTitle = (readerActiveItem ? readerActiveItem.title : 'kagami').replace(/[^a-z0-9]+/gi, '-').toLowerCase();
-  const filename = `${safeTitle}-ch${readerActiveIndex}-hal${pageNum}.jpg`;
   return `
     <div class="manga-img-page">
       <img
@@ -1574,9 +1524,6 @@ function createMangaImageHTML(src, pageNum, total) {
         loading="lazy"
         onerror="this.parentElement.innerHTML='<div class=\'manga-img-placeholder\'><i class=\'fas fa-image\'></i><p>Gagal memuat gambar</p></div>'"
       />
-      <button type="button" class="btn-download-page" title="Unduh Halaman" onclick="downloadImage('${src}', '${filename}')">
-        <i class="fas fa-download"></i>
-      </button>
       <div class="manga-img-page-num">${pageNum} / ${total}</div>
     </div>
   `;
@@ -1636,16 +1583,19 @@ function changeMangaPage(direction) {
 
 // ====== DROPDOWNS & NAV CONTROLS ======
 function populateReaderDropdown() {
-  const total = readerActiveItem.chapters || readerActiveItem.episodes || 0;
+  const isAnime = readerActiveItem.type && readerActiveItem.type.toLowerCase() === 'anime';
+  const list = isAnime
+    ? Array.from({ length: readerActiveItem.episodes || 0 }, (_, i) => i + 1)
+    : getChapterList(readerActiveItem);
   const select = document.getElementById('readerChapterSelector');
 
   if (!select) return;
 
   let optionsHTML = '';
-  for (let i = 1; i <= total; i++) {
+  list.forEach((i) => {
     const isSelected = i === readerActiveIndex ? 'selected' : '';
     optionsHTML += `<option value="${i}" ${isSelected}>Chapter ${i}</option>`;
-  }
+  });
   select.innerHTML = optionsHTML;
 
   // Handle dropdown select change
@@ -1653,25 +1603,28 @@ function populateReaderDropdown() {
     openReader(readerActiveItem.id, parseInt(this.value));
   };
 
+  // Posisi chapter sekarang di dalam daftar (buat cari chapter sebelum/sesudahnya)
+  const posIndex = list.indexOf(readerActiveIndex);
+
   // Setup header/footer chapter controls disabled states
   const prevBtn = document.getElementById('prevChapBtn');
   const nextBtn = document.getElementById('nextChapBtn');
 
   if (prevBtn) {
-    if (readerActiveIndex <= 1) {
+    if (posIndex <= 0) {
       prevBtn.disabled = true;
     } else {
       prevBtn.disabled = false;
-      prevBtn.onclick = () => openReader(readerActiveItem.id, readerActiveIndex - 1);
+      prevBtn.onclick = () => openReader(readerActiveItem.id, list[posIndex - 1]);
     }
   }
 
   if (nextBtn) {
-    if (readerActiveIndex >= total) {
+    if (posIndex === -1 || posIndex >= list.length - 1) {
       nextBtn.disabled = true;
     } else {
       nextBtn.disabled = false;
-      nextBtn.onclick = () => openReader(readerActiveItem.id, readerActiveIndex + 1);
+      nextBtn.onclick = () => openReader(readerActiveItem.id, list[posIndex + 1]);
     }
   }
 }
@@ -2360,7 +2313,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoNextBtn = document.getElementById('videoNextBtn');
   if (videoNextBtn) {
     videoNextBtn.addEventListener('click', () => {
-      const total = readerActiveItem.type.toLowerCase() === 'anime' ? readerActiveItem.episodes : readerActiveItem.chapters;
+      const total = readerActiveItem.type.toLowerCase() === 'anime' ? readerActiveItem.episodes : getChapterCount(readerActiveItem);
       if (readerActiveIndex < total) {
         openReader(readerActiveItem.id, readerActiveIndex + 1);
         showToast(`Memutar Episode ${readerActiveIndex}...`);

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kagami-cache-v1';
+const CACHE_NAME = 'kagami-cache-v2';
 const ASSETS = [
   './',
   './index.html',

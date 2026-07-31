@@ -294,7 +294,7 @@ const DEFAULT_TITLES = [
 
 // ====== VERSI DATA — naikkan angka ini setiap kali DEFAULT_TITLES diubah ======
 // Ini memaksa localStorage lama ter-reset otomatis saat app dibuka
-const DATA_VERSION = "v10";
+const DATA_VERSION = "v11";
 
 const DEFAULT_USERS = [
   { email: "guest@kagami.com", name: "Guest Kagami", avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Guest", password: "password123" }
@@ -1594,7 +1594,6 @@ function createMangaImageHTML(src, pageNum, total) {
         loading="lazy"
         onerror="this.parentElement.innerHTML='<div class=\'manga-img-placeholder\'><i class=\'fas fa-image\'></i><p>Gagal memuat gambar</p></div>'"
       />
-      <div class="manga-img-page-num">${pageNum} / ${total}</div>
     </div>
   `;
 }

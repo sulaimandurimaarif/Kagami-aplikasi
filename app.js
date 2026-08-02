@@ -1175,7 +1175,7 @@ const DEFAULT_TITLES = [
 
 // ====== VERSI DATA — naikkan angka ini setiap kali DEFAULT_TITLES diubah ======
 // Ini memaksa localStorage lama ter-reset otomatis saat app dibuka
-const DATA_VERSION = "v13";
+const DATA_VERSION = "v14";
 
 const DEFAULT_USERS = [
   { email: "guest@kagami.com", name: "Guest Kagami", avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Guest", password: "password123" }
